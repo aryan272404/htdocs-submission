@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login | Easy Study App</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body, html {
+      height: 100%;
+      overflow: hidden;
+    }
+
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      z-index: -1;
+    }
+
+    .container {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      padding: 0 20px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    form {
+      width: 100%;
+      max-width: 400px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    label {
+      font-size: 1rem;
+      margin-bottom: 5px;
+      text-align: left;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px 15px;
+      border: 2px solid rgba(255, 255, 255, 0.6);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      font-size: 1rem;
+    }
+
+    input::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    input:focus {
+      border-color: #ffffff;
+      background: rgba(255, 255, 255, 0.2);
+      outline: none;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      flex: 1;
+      padding: 12px 0;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      border: 2px solid white;
+      border-radius: 25px;
+      text-align: center;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: white;
+      color: #1e3c72;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="particles-js"></div>
+
+  <div class="container">
+    <h1>Login to Your Account</h1>
+    <form action="login.php" method="POST">
+      <div>
+        <label for="userid">Enter User ID</label>
+        <input type="text" id="userid" name="userid" placeholder="yourname@1234" required />
+      </div>
+      <div>
+        <label for="password">Enter Password</label>
+        <input type="password" id="password" name="password" placeholder="••••••••" required />
+      </div>
+      <div class="buttons">
+        <button type="submit" class="btn">Login</button>
+        <a href="signup.php" class="btn">Create Account</a>
+      </div>
+    </form>
+  </div>
+
+  <!-- Particle.js Library -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+  <!-- Particle.js Config -->
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+        "color": { "value": "#ffffff" },
+        "shape": { "type": "circle", "stroke": { "width": 0, "color": "#000000" } },
+        "opacity": { "value": 0.5 },
+        "size": { "value": 3, "random": true },
+        "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1 },
+        "move": { "enable": true, "speed": 4 }
+      },
+      "interactivity": {
+        "events": {
+          "onhover": { "enable": true, "mode": "grab" },
+          "onclick": { "enable": true, "mode": "push" }
+        },
+        "modes": {
+          "grab": { "distance": 200, "line_linked": { "opacity": 1 } },
+          "push": { "particles_nb": 4 }
+        }
+      },
+      "retina_detect": true
+    });
+  </script>
+</body>
+</html>
